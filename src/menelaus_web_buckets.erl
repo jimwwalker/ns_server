@@ -515,7 +515,7 @@ do_bucket_create(Name, ParsedProps) ->
     end.
 
 do_bucket_create(Name, Params, Ctx) ->
-    MaxBuckets = ns_config:read_key_fast(max_bucket_count, 10),
+    MaxBuckets = 1000,
     case length(Ctx#bv_ctx.all_buckets) >= MaxBuckets of
         true ->
             {{struct, [{'_', iolist_to_binary(io_lib:format("Cannot create more than ~w buckets", [MaxBuckets]))}]}, 400};
