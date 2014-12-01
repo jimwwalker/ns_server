@@ -41,7 +41,7 @@ child_specs(BucketName) ->
       permanent, 1000, worker, [doc_replication_srv]},
      {capi_set_view_manager,
       {capi_set_view_manager, start_link_remote, [ns_node_disco:couchdb_node(), BucketName]},
-      permanent, 1000, worker, []},
-     {couch_stats_reader,
-      {couch_stats_reader, start_link_remote, [ns_node_disco:couchdb_node(), BucketName]},
       permanent, 1000, worker, []}].
+%     {couch_stats_reader,
+%      {couch_stats_reader, start_link_remote, [ns_node_disco:couchdb_node(), BucketName]},
+%      permanent, 1000, worker, []}].
